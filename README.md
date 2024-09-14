@@ -5,7 +5,7 @@
 bash <(curl -sL https://github.com/3981877/v2ray/releases/download/1.0/v2ray.sh)
 ```
 
-#### 甲骨云报错解决方法：cannot find a valid baseurl for repo:base/7/x86_64
+#### 甲骨云报错无法安装NGINX解决方法：cannot find a valid baseurl for repo:base/7/x86_64
 
 备份现有的YUM配置文件：
 ```
