@@ -1,5 +1,17 @@
 # v2ray-centos7使用方法
 
+# v2ray一键脚本
+```
+bash <(curl -sL https://github.com/3981877/v2ray/releases/download/1.0/v2ray.sh)
+```
+
+#### 甲骨云报错解决方法：cannot find a valid baseurl for repo:base/7/x86_64
+
+备份现有的YUM配置文件：
+```
+sudo cp -r /etc/yum.repos.d /etc/yum.repos.d.backup
+```
+
 更新YUM仓库源为阿里云镜像源：
 ```
 sudo nano /etc/yum.repos.d/CentOS-Base.repo
@@ -35,14 +47,12 @@ gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
 ```
 sudo yum clean all
 sudo yum makecache
+```
+#### 这一步可以忽略太浪费时间了
+```
 sudo yum update
 ```
 
-
-# v2ray一键脚本
-```
-bash <(curl -sL https://github.com/3981877/v2ray/releases/download/1.0/v2ray.sh)
-```
 
 
  # 防火墙相关命令
