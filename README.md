@@ -1,5 +1,8 @@
 # v2ray使用方法
-
+## 安装扩展源
+```
+yum install epel-release
+```
 ### 安装基础组件
 
 #### Debian/Ubuntu
