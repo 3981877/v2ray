@@ -1,22 +1,44 @@
-# v2ray使用方法
-## 安装扩展源
-```
-yum install epel-release
-```
-### 安装基础组件
+# v2ray-centos7使用方法
 
-#### Debian/Ubuntu
+更新YUM仓库源为阿里云镜像源：
 ```
-apt update -y  && apt install -y curl
+sudo nano /etc/yum.repos.d/CentOS-Base.repo
 ```
-#### CentOS/RedHat/Fedora/AlmaLinux/Rocky Linux
+将内容替换为以下内容：
 ```
-yum update && yum install -y curl
+[base]
+name=CentOS-$releasever - Base - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
+
+[updates]
+name=CentOS-$releasever - Updates - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos/$releasever/updates/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
+
+[extras]
+name=CentOS-$releasever - Extras - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos/$releasever/extras/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
+
+[centosplus]
+name=CentOS-$releasever - Plus - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos/$releasever/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
 ```
-#### Alpine Linux
+#### 清理并重建缓存
 ```
-apk update && apk add curl
+sudo yum clean all
+sudo yum makecache
+sudo yum update
 ```
+
+
 # v2ray一键脚本
 ```
 bash <(curl -sL https://github.com/3981877/v2ray/releases/download/1.0/v2ray.sh)
