@@ -21,3 +21,13 @@ systemctl stop firewalld.service
 systemctl disable firewalld.service
 ```
 
+# 甲骨文 ( oracle ) 开启 root + 密码 登录
+```
+sudo -i
+echo root:passwd |chpasswd root
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
+service sshd restart
+```
+默认密码是: passwd
+登录后一定要修改密码！密码修改命令：passwd
