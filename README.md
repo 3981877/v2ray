@@ -14,7 +14,7 @@ yum update && yum install -y curl
 ```
 apk update && apk add curl
 ```
-#### v2ray一键脚本
+# v2ray一键脚本
 ```
 bash <(curl -sL https://github.com/3981877/v2ray/releases/download/1.0/v2ray.sh)
 ```
